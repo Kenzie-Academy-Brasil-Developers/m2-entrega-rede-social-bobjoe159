@@ -1,12 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/styles/reset.css" />
+    <link rel="stylesheet" href="src/styles/loginPage.css" />
+    <link rel="stylesheet" href="src/styles/variables.css" />
     <title>Rede Social</title>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <header class="headerTopo">
+      <div class="headerContent">
+        <img class="mainLogo" src="src/assets/mainLogo.svg" />
+        <section class="buttonsContent">
+          <button class="headerLogin">Login</button>
+          <button class="headerRegister">Registro</button>
+        </section>
+      </div>
+    </header>
+    <main class="mainContent">
+      <h2 class="mainLogin">Login</h2>
+      <input class="mainEmail" type="email" placeholder="Seu e-mail" />
+      <input
+        class="mainPassword"
+        type="password"
+        name=""
+        id=""
+        placeholder="Sua senha"
+      />
+      <button class="buttonLogin">Logar</button>
+      <p class="registerMessage">Ainda não possui cadastro?</p>
+      <button class="buttonRegister">Ir para página de registro</button>
+    </main>
+  </body>
 </html>
