@@ -1,6 +1,7 @@
 body {
   font-size: 1.6rem;
-  font-family: 'Inter'
+  font-family: 'Inter';
+  background: #F8F9FA;
 }
 
 .headerTopo {
@@ -51,11 +52,14 @@ body {
 .mainRegisterHeader {
   display: flex;
   justify-content: space-between;
-  margin-top: 6.9rem;
 }
 
 .nameInput {
   margin-top: 3rem;
+}
+
+.mainRegisterHeader {
+  margin-top: 6.9rem;
 }
 
 .nameInput,
@@ -67,6 +71,7 @@ body {
   padding-left: 2rem;
   border: 2px solid var(--border-grey);
 }
+
 .nameInput,
 .emailInput,
 .passwordInput,
@@ -105,4 +110,32 @@ body {
   background-color: transparent;
   border: 1px solid;
   font-weight: 700;
+}
+
+@media (min-width: 768px) {
+  .mainContent {
+    background-color: #FFFFFF;
+    -webkit-box-shadow: 3px 3px 15px -6px rgba(0,0,0,0.25); 
+    box-shadow: 3px 3px 15px -6px rgba(0,0,0,0.25);
+    width: 46.1rem;
+    padding: 4rem 2rem; 
+    margin-top: 11rem;
+  }
+  .mainRegisterHeader {
+    margin-top: 0rem;
+  }
+  .headerContent {
+    max-width: 100vw;
+    margin-inline: 20rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .headerLogin,
+  .headerRegister,
+  .registerButton,
+  .loginPageBtn,
+  .backButton {
+    cursor: pointer;
+  }
 }

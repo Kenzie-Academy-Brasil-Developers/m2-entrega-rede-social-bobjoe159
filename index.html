@@ -5,8 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="src/styles/reset.css" />
-    <link rel="stylesheet" href="src/styles/loginPage.css" />
+    <link rel="stylesheet" href="src/styles/indexPage.css" />
     <link rel="stylesheet" href="src/styles/variables.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+
     <title>Rede Social</title>
   </head>
   <body>
@@ -21,17 +27,27 @@
     </header>
     <main class="mainContent">
       <h2 class="mainLogin">Login</h2>
-      <input class="mainEmail" type="email" placeholder="Seu e-mail" />
+      <input class="mainEmail" type="email" placeholder="Seu e-mail" required />
       <input
         class="mainPassword"
         type="password"
         name=""
         id=""
         placeholder="Sua senha"
+        required
       />
-      <button class="buttonLogin">Logar</button>
+      <button class="buttonLogin" type="submit">Logar</button>
       <p class="registerMessage">Ainda não possui cadastro?</p>
       <button class="buttonRegister">Ir para página de registro</button>
     </main>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
+    <script type="module" src="./src/scripts/index.js"></script>
+    <script type="module" src="./src/scripts/axios.js"></script>
+    <script type="module" src="./src/scripts/toast.js"></script>
+    <script type="module" src="./src/scripts/requests.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </body>
 </html>

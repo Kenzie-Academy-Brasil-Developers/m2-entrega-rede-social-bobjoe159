@@ -1,0 +1,248 @@
+body {
+  font-size: 1.6rem;
+  font-family: 'Inter';
+  background: #F8F9FA;
+}
+
+.headerTopo {
+  background-color: var(--grey-background);
+}
+
+.mainLogo {
+  padding-block: 3rem;
+}
+
+.headerContent {
+  max-width: 33.6rem;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.headerLogin {
+  background-color: var(--button-grey);
+  color: var(--basic-white);
+  padding: 0.8rem;
+  border: none;
+  border-radius: 4px;
+}
+
+.headerExit {
+  background-color: transparent;
+  border: none;
+  color: var(--basic-white);
+}
+
+.userInfo {
+  display: flex;
+  max-width: 33.6rem;
+  margin: 0 auto;
+  margin-top: 5rem;
+  align-items: center;
+}
+
+.userName,
+.userBio {
+  margin-left: 1.2rem;
+}
+
+.userName {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.userBio {
+  font-size: 1.3rem;
+  margin-top: 0.8rem;
+}
+
+.userFollowers {
+  margin-left: 1rem;
+  margin-bottom: 2.3rem;
+  font-size: 1.2rem;
+}
+
+.postInputs {
+  position: relative;
+  max-width: 33.6rem;
+  margin: 0 auto;
+}
+
+.postTitle,
+.postDescription {
+  display: block;
+  width: 100%;
+  border: 2px solid var(--border-grey);
+}
+
+.postTitle {
+  padding-block: 1.6rem;
+  padding-left: 2rem;
+  margin-top: 5.8rem;
+}
+
+.postDescription {
+  margin-top: 2.2rem;
+  padding: 2.8rem 10.6rem 7.8rem 2rem;
+}
+
+.postButton {
+  position: absolute;
+  align-items: flex-end;
+  right: 0;
+  margin-top: 3.2rem;
+  padding: 1.1rem;
+  background-color: var(--border-grey);
+  border: none;
+  color: var(--text-grey);
+  font-weight: 700;
+}
+
+.followSugestions {
+  max-width: 33.6rem;
+  margin: 0 auto;
+}
+
+.followText {
+  margin-top: 10rem;
+}
+
+.cardInfos {
+  display: flex;
+  align-items: center;
+}
+
+.followedName {
+  margin-left: 1.2rem;
+}
+
+.followedName > h4 {
+  font-size: 2rem;
+}
+
+.followedName > p {
+  font-size: 1.4rem;
+}
+
+.cardButton {
+  margin-top: 2.55rem;
+  color: var(--basic-white);
+  border: none;
+  padding-block: 0.55rem;
+  padding-inline: 1.2rem;
+  background-color: var(--blue-button);
+}
+
+.cardSugestion {
+  margin-top: 6.1rem;
+}
+
+.sugestionList {
+  display: flex;
+  overflow-y: auto;
+}
+
+.cardContent {
+  width: 21rem;
+}
+
+.postsList {
+  max-width: 33.6rem;
+  margin: 0 auto;
+}
+
+.postsList > h4 {
+  margin-top: 4.55rem;
+  font-size: 2.8rem;
+  margin-bottom: 5rem;
+}
+
+.cardPost {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.postMessageTitle {
+  font-size: 2.8rem;
+  margin-top: 3.4rem;
+  margin-bottom: 2rem;
+}
+
+.postMessageDescription {
+  margin-bottom: 3.2rem;
+}
+
+.postFooterButton {
+  background-color: var(--grey-background);
+  color: var(--basic-white);
+  padding: 1.05rem 1.2rem;
+}
+
+.mainFooter {
+  display: flex;
+  align-items: center;
+}
+
+.postFooterImg {
+  margin-left: 3.2rem;
+  margin-right: 0.7rem;
+}
+
+.likesNumber {
+  font-size: 1.3rem;
+}
+
+.dashboardPost {
+  margin-top: 5.2rem;
+}
+
+@media (min-width: 1024px) {
+  body {
+    overflow-x: hidden;
+  }
+  .mainContent {
+    padding: 4rem 2rem;
+  }
+  .headerContent {
+    max-width: 100vw;
+    margin-inline: 20rem;
+    display: flex;
+    align-items: center;
+  }
+  .flexPosition {
+    display: flex;
+    justify-content: space-between;
+  }
+  .desktopStyle {
+    width: 120rem;
+    margin-right: 12.7rem;
+    padding-left: 20rem;
+  }
+  .postInputs {
+    max-width: 100%;
+  }
+  .userInfo {
+    max-width: 100%;
+  }
+  .sugestionList {
+    display: block;
+  }
+  .followSugestionsContent {
+    padding-right: 20rem;
+  }
+  .dashboardPost {
+    max-width: 100rem;
+    padding: 1rem;
+    background-color: var(--basic-white);
+  }
+  .postsList {
+    max-width: 100vw;
+    margin-inline: 20rem;
+  }
+  .postButton,
+  .headerExit {
+    cursor: pointer;
+  }
+}

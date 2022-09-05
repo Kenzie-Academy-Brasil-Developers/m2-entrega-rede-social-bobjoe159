@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/reset.css" />
+    <link rel="stylesheet" href="../styles/dashboardPage.css" />
+    <link rel="stylesheet" href="../styles/variables.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+    <title>Rede Social</title>
+  </head>
+  <body>
+    <header class="headerTopo">
+      <div class="headerContent">
+        <img class="mainLogo" src="../assets/mainLogo.svg" />
+        <section class="buttonsContent">
+          <button class="headerExit">Sair</button>
+        </section>
+      </div>
+    </header>
+    <main class="mainContent">
+      <div class="flexPosition">
+        <div class="desktopStyle">
+          <section class="userInfo">
+            <img src="../assets/userAvatar.svg" alt="" class="userAvatar" />
+            <div class="infosUser">
+              <p class="userName">Samuel Leão</p>
+              <p class="userBio">Front End Engineer</p>
+            </div>
+            <span class="userFollowers">565 seguidores</span>
+          </section>
+
+          <section class="postInputs">
+            <input
+              class="postTitle"
+              type="text"
+              name=""
+              id=""
+              placeholder="Digitar título do post"
+            />
+            <input
+              class="postDescription"
+              type="text"
+              name=""
+              id=""
+              placeholder="Digitar descrição do post"
+            />
+            <button class="postButton">Postar</button>
+          </section>
+        </div>
+
+        <div class="followSugestionsContent">
+          <section class="followSugestions">
+            <h3 class="followText">Sugestões para você seguir</h3>
+            <div class="usersList">
+              <ul class="sugestionList">
+                <li class="cardSugestion">
+                  <section class="cardContent">
+                    <div class="cardInfos">
+                      <img src="../assets/followedAvatar.svg" alt="" />
+                      <div class="followedName">
+                        <h4>Carlos Lima</h4>
+                        <p>Ux e UI Designer</p>
+                      </div>
+                    </div>
+                    <button class="cardButton">Seguir</button>
+                  </section>
+                </li>
+                <li class="cardSugestion">
+                  <section class="cardContent">
+                    <div class="cardInfos">
+                      <img src="../assets/followedAvatar.svg" alt="" />
+                      <div class="followedName">
+                        <h4>Carlos Lima</h4>
+                        <p>Ux e UI Designer</p>
+                      </div>
+                    </div>
+                    <button class="cardButton">Seguir</button>
+                  </section>
+                </li>
+                <li class="cardSugestion">
+                  <section class="cardContent">
+                    <div class="cardInfos">
+                      <img src="../assets/followedAvatar.svg" alt="" />
+                      <div class="followedName">
+                        <h4>Carlos Lima</h4>
+                        <p>Ux e UI Designer</p>
+                      </div>
+                    </div>
+                    <button class="cardButton">Seguir</button>
+                  </section>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <section class="postsList">
+        <h4>Posts</h4>
+        <ul>
+          <li class="dashboardPost">
+            <section class="cardPost">
+              <img src="../assets/posterAvatar.svg" alt="" />
+              <div class="posterInfos">
+                <p>Samuel Persuhn</p>
+                <span> Front-End Engineer </span>
+              </div>
+            </section>
+            <section class="postMessage">
+              <h3 class="postMessageTitle">
+                Como criar uma interface simples e agradável utilizando boas
+                práticas de design
+              </h3>
+              <p class="postMessageDescription">
+                Hoje vamos conversar sobre como criar uma interface agradável
+                mesmo sem ter um design pronto feito por um profissional de UI
+                design
+              </p>
+            </section>
+            <footer class="mainFooter">
+              <button class="postFooterButton">Abrir post</button>
+              <img class="postFooterImg" src="../assets/likeHeart.svg" alt="" />
+              <span class="likesNumber">25</span>
+            </footer>
+          </li>
+          <li class="dashboardPost">
+            <section class="cardPost">
+              <img src="../assets/posterAvatar.svg" alt="" />
+              <div class="posterInfos">
+                <p>Samuel Persuhn</p>
+                <span> Front-End Engineer </span>
+              </div>
+            </section>
+            <section class="postMessage">
+              <h3 class="postMessageTitle">
+                Como criar uma interface simples e agradável utilizando boas
+                práticas de design
+              </h3>
+              <p class="postMessageDescription">
+                Hoje vamos conversar sobre como criar uma interface agradável
+                mesmo sem ter um design pronto feito por um profissional de UI
+                design
+              </p>
+            </section>
+            <footer class="mainFooter">
+              <button class="postFooterButton">Abrir post</button>
+              <img class="postFooterImg" src="../assets/likeHeart.svg" alt="" />
+              <span class="likesNumber">25</span>
+            </footer>
+          </li>
+          <li class="dashboardPost">
+            <section class="cardPost">
+              <img src="../assets/posterAvatar.svg" alt="" />
+              <div class="posterInfos">
+                <p>Samuel Persuhn</p>
+                <span> Front-End Engineer </span>
+              </div>
+            </section>
+            <section class="postMessage">
+              <h3 class="postMessageTitle">
+                Como criar uma interface simples e agradável utilizando boas
+                práticas de design
+              </h3>
+              <p class="postMessageDescription">
+                Hoje vamos conversar sobre como criar uma interface agradável
+                mesmo sem ter um design pronto feito por um profissional de UI
+                design
+              </p>
+            </section>
+            <footer class="mainFooter">
+              <button class="postFooterButton">Abrir post</button>
+              <img class="postFooterImg" src="../assets/likeHeart.svg" alt="" />
+              <span class="likesNumber">25</span>
+            </footer>
+          </li>
+        </ul>
+      </section>
+    </main>
+    <script type="module" src="../scripts/logout.js"></script>
+    <script type="module" src="../scripts/toast.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
+  </body>
+</html>
