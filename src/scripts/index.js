@@ -1,13 +1,14 @@
 import { Requests } from './requests.js'
 
 class Index {
-  // static renderIndex() {
-  //   const token = localStorage.getItem('redeSocial:token')
+  static renderIndex() {
+    const token = localStorage.getItem('@redeSocial:token')
 
-  //   if (token) {
-  //     window.location.replace('/src/pages/dashboard.html')
-  //   }
-  // }
+    if (token) {
+      window.location.replace('/src/pages/dashboard.html')
+    }
+  }
+
   static handleLogin() {
     const mainEmail = document.querySelector('.mainEmail')
     const mainPassword = document.querySelector('.mainPassword')
@@ -18,13 +19,14 @@ class Index {
         email: mainEmail.value,
         password: mainPassword.value
       }
-      const login = await Requests.login(data)
+      await Requests.login(data)
     })
   }
 
   static sendregisterPage() {
-    const headerRegister = document.querySelector('.headerRegister')
-    headerRegister.addEventListener('click', () => {
+    const buttonRegister = document.querySelector('.buttonRegister')
+
+    buttonRegister.addEventListener('click', () => {
       window.location.replace('src/pages/register.html')
     })
   }

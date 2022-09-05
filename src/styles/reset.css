@@ -1,3 +1,11 @@
+:root {
+  font-size: 62.5%;
+}
+body {
+  font-size: 1.6rem;
+  font-family: 'Inter';
+  background: #F8F9FA;
+}
 * {
   margin: 0;
   padding: 0;

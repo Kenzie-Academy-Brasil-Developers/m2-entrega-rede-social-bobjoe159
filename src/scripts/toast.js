@@ -1,6 +1,5 @@
 export class Toast {
   static create(text, color) {
-    console.log(color)
     Toastify({
       text: text,
       duration: 3000,
