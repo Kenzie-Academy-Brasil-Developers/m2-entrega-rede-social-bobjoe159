@@ -27,8 +27,9 @@ export class Requests {
   static async register(data) {
     const registerData = await instance
       .post('/users/', data)
-      .then(() => {
+      .then(resp => {
         Toast.create('Usuário registrado com sucesso!', 'green')
+        return resp.data
       })
       .catch(err => {
         console.log(err)
@@ -40,6 +41,19 @@ export class Requests {
   static async getUser(id) {
     const getUser = await instance
       .get(`/users/${id}/`)
+      .then(resp => {
+        return resp.data
+      })
+      .catch(err => {
+        Toast.create(err, 'red')
+        console.log(err)
+      })
+    return getUser
+  }
+
+  static async getAllUsers() {
+    const getUser = await instance
+      .get(`/users/`)
       .then(resp => {
         return resp.data
       })
@@ -65,7 +79,7 @@ export class Requests {
 
   static async getAllPosts() {
     const getAllPosts = await instance
-      .get('/posts/')
+      .get('/posts/?limit=10&offset=20/')
       .then(resp => {
         return resp.data
       })
@@ -73,5 +87,31 @@ export class Requests {
         console.log(err)
       })
     return getAllPosts
+  }
+
+  static async likePost(data) {
+    const likePost = await instance
+      .post('/likes/', data)
+      .then(resp => {
+        Toast.create('Like realizado com sucesso.', 'green')
+        return resp.data
+      })
+      .catch(err => {
+        Toast.create(err, 'red')
+      })
+    return likePost
+  }
+
+  static async unlikePost(data) {
+    const unlikePost = await instance
+      .delete(`/likes/${data}/`)
+      .then(resp => {
+        Toast.create('Unlike realizado com sucesso', 'green')
+        return resp.data
+      })
+      .catch(err => {
+        Toast.create(err, 'red')
+      })
+    return unlikePost
   }
 }

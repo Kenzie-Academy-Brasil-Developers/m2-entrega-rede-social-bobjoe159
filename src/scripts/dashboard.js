@@ -1,6 +1,7 @@
 import { Requests } from './requests.js'
 
 const postsContentList = document.querySelector('.dashBoardList')
+const sugestionList = document.querySelector('.sugestionList')
 
 class Dashboard {
   static renderDashboard() {
@@ -85,21 +86,109 @@ class Dashboard {
       postMessageH3.innerHTML = user.title
       postMessageDescription.innerHTML = user.description
       mainFooterBtn.innerText = 'Abrir post'
+      li.id = user.uuid
       mainFooterImg.src = '../assets/likeHeart.svg'
+      mainFooterImg.id = user.uuid
+      console.log(user.uuid)
       mainFooterSpan.innerHTML = user.likes.length
     })
+    Dashboard.likePost()
   }
 
   static likePost() {
     const postFooterImg = document.querySelectorAll('.postFooterImg')
-    postFooterImg.forEach(button => {
-      console.log(button)
-      postFooterImg.addEventListener('click', () => {
-        console.log('ta funfando')
+    let liked = false
+    postFooterImg.forEach(likeButton => {
+      likeButton.addEventListener('click', async () => {
+        if (!liked) {
+          likeButton.src = '../assets/likeheartRed.svg'
+          liked = true
+          const data = {
+            post_uuid: likeButton.id
+          }
+          await Requests.likePost(data)
+        } else {
+          likeButton.src = '../assets/likeHeart.svg'
+          liked = false
+          await Requests.unlikePost(likeButton.id)
+        }
+      })
+    })
+  }
+
+  static async randomSugestions() {
+    const getAllUsers = await Requests.getAllUsers()
+    const randomUsers = []
+    for (let i = 0; i < 3; i++) {
+      const randomSugestions = Math.floor(
+        Math.random(getAllUsers.results.length) * 10
+      )
+      randomUsers.push(getAllUsers.results[randomSugestions])
+    }
+    randomUsers.forEach(users => {
+      const cardSugestion = document.createElement('li')
+      const cardContent = document.createElement('section')
+      const cardInfos = document.createElement('div')
+      const followedAvatar = document.createElement('img')
+      const followedName = document.createElement('div')
+      const followedUserTitle = document.createElement('h4')
+      const followedUserP = document.createElement('p')
+      const cardButton = document.createElement('button')
+
+      cardSugestion.classList.add('cardSugestion')
+      cardSugestion.append(cardContent)
+
+      cardContent.classList.add('cardContent')
+      cardContent.append(cardInfos, cardButton)
+
+      cardInfos.classList.add('cardInfos')
+      cardInfos.append(followedAvatar, followedName)
+      followedName.append(followedUserTitle, followedUserP)
+
+      followedAvatar.classList.add('followedAvatar')
+      followedName.classList.add('followedName')
+      followedAvatar.src = users.image
+      followedUserTitle.innerText = users.username
+      followedUserP.innerText = users.work_at
+      cardButton.innerText = 'Seguir'
+      cardButton.classList.add('cardButton')
+
+      cardSugestion.id = users.uuid
+
+      sugestionList.append(cardSugestion)
+    })
+    Dashboard.followRandomSugestions()
+  }
+
+  static followRandomSugestions() {
+    const cardButton = document.querySelectorAll('.cardButton')
+    let following = false
+    cardButton.forEach(card => {
+      card.addEventListener('click', event => {
+        if (!following) {
+          card.innerHTML = 'Seguindo'
+          following = true
+        } else {
+          card.innerHTML = 'Seguir'
+          following = false
+        }
       })
     })
   }
 }
+
+// ;<li class="cardSugestion">
+//   <section class="cardContent">
+//     <div class="cardInfos">
+//       <img class="followedAvatar" src="../assets/followedAvatar.svg" alt="" />
+//       <div class="followedName">
+//         <h4>Carlos Lima</h4>
+//         <p>Ux e UI Designer</p>
+//       </div>
+//     </div>
+//     <button class="cardButton">Seguir</button>
+//   </section>
+// </li>
 
 // <li class="dashboardPost">
 //   <section class="cardPost">
@@ -135,4 +224,4 @@ Dashboard.userInfosUpdate()
 Dashboard.createPost()
 Dashboard.renderPosts()
 Dashboard.renderDashboard()
-Dashboard.likePost()
+Dashboard.randomSugestions()
