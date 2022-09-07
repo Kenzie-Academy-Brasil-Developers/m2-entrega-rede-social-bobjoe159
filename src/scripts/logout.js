@@ -8,7 +8,7 @@ class Logout {
       event.preventDefault()
       Toast.create('Você saiu da conta.', 'red')
       setTimeout(() => {
-        window.location.replace('/index.html')
+        window.location.replace('/index.html/')
       }, 2000)
       localStorage.clear()
     })
