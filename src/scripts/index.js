@@ -27,7 +27,7 @@ class Index {
     const buttonRegister = document.querySelector('.buttonRegister')
 
     buttonRegister.addEventListener('click', () => {
-      window.location.assign('./src/pages/register.html')
+      window.location.replace('./src/pages/register.html')
     })
   }
 }
