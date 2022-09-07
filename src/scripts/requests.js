@@ -25,7 +25,11 @@ export class Requests {
 
   static async register(data) {
     const registerData = await instance
-      .post('/users/', data)
+      .post('/users/', data, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      })
       .then(resp => {
         Toast.create('Usuário registrado com sucesso!', 'green')
         return resp.data
@@ -104,7 +108,11 @@ export class Requests {
 
   static async unlikePost(data) {
     const unlikePost = await instance
-      .delete(`/likes/${data}/`)
+      .delete(`/likes/${data}/`, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      })
       .then(resp => {
         Toast.create('Unlike realizado com sucesso', 'green')
         return resp.data
