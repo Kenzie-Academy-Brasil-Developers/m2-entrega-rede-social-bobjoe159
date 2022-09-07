@@ -9,7 +9,7 @@ class Dashboard {
     const token = localStorage.getItem('@redeSocial:token')
 
     if (!token) {
-      window.location.replace('./index.html')
+      window.location.replace('/index.html')
     }
   }
 
