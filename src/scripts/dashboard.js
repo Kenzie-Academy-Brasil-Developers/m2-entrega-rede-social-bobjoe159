@@ -1,3 +1,4 @@
+import { Modal } from './modal.js'
 import { Requests } from './requests.js'
 
 const postsContentList = document.querySelector('.dashBoardList')
@@ -86,13 +87,14 @@ class Dashboard {
       postMessageH3.innerHTML = user.title
       postMessageDescription.innerHTML = user.description
       mainFooterBtn.innerText = 'Abrir post'
+      mainFooterBtn.id = user.uuid
       li.id = user.uuid
       mainFooterImg.src = '../assets/likeHeart.svg'
       mainFooterImg.id = user.uuid
-      console.log(user.uuid)
       mainFooterSpan.innerHTML = user.likes.length
     })
     Dashboard.likePost()
+    await Modal.showModal(postsList)
   }
 
   static likePost() {
@@ -154,6 +156,7 @@ class Dashboard {
       cardButton.classList.add('cardButton')
 
       cardSugestion.id = users.uuid
+      cardButton.id = users.uuid
 
       sugestionList.append(cardSugestion)
     })
@@ -164,10 +167,14 @@ class Dashboard {
     const cardButton = document.querySelectorAll('.cardButton')
     let following = false
     cardButton.forEach(card => {
-      card.addEventListener('click', event => {
+      card.addEventListener('click', async event => {
+        const data = {
+          following_users_uuid: event.target.id
+        }
         if (!following) {
           card.innerHTML = 'Seguindo'
           following = true
+          await Requests.follow(data)
         } else {
           card.innerHTML = 'Seguir'
           following = false

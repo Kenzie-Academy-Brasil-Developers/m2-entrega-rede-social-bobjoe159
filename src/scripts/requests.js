@@ -5,7 +5,6 @@ const token = localStorage.getItem('@redeSocial:token')
 
 export class Requests {
   static async login(data) {
-    console.log(data)
     const loginData = await instance
       .post('/users/login/', data)
       .then(resp => {
@@ -79,7 +78,7 @@ export class Requests {
 
   static async getAllPosts() {
     const getAllPosts = await instance
-      .get('/posts/?limit=10&offset=20/')
+      .get('/posts/')
       .then(resp => {
         return resp.data
       })
@@ -113,5 +112,19 @@ export class Requests {
         Toast.create(err, 'red')
       })
     return unlikePost
+  }
+
+  static async follow(data) {
+    const followPeople = await instance
+      .post('/follow/', data)
+      .then(resp => {
+        Toast.create('Você agora está seguindo este usuário.', 'green')
+        return resp.data
+      })
+      .catch(err => {
+        console.log(err)
+        Toast.create(err, 'red')
+      })
+    return followPeople
   }
 }

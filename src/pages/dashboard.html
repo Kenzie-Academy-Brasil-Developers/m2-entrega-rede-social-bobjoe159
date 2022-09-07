@@ -148,6 +148,23 @@
         </ul>
       </section>
     </main>
+
+    <div class="modal hidden">
+      <div class="backgroundModal"></div>
+      <div class="modalContent">
+        <header class="headerModal">
+          <img class="modalAvatar" src="../assets/userAvatar.svg" alt="" />
+          <div class="infosModal">
+            <p class="nameModal">Teste Teste</p>
+            <p class="jobModal">Programador</p>
+          </div>
+          <div class="closeModal">X</div>
+        </header>
+        <main class="modalContent">
+          <p class="modalText"></p>
+        </main>
+      </div>
+    </div>
     <script
       type="text/javascript"
       src="https://cdn.jsdelivr.net/npm/toastify-js"
@@ -156,6 +173,7 @@
     <script type="module" src="../scripts/toast.js"></script>
     <script type="module" src="../scripts/dashboard.js"></script>
     <script type="module" src="../scripts/requests.js"></script>
+    <script type="module" src="../scripts/modal.js"></script>
     <script type="module" src="./src/scripts/axios.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </body>

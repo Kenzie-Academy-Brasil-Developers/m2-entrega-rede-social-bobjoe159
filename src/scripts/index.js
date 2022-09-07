@@ -32,5 +32,6 @@ class Index {
   }
 }
 
+Index.renderIndex()
 Index.handleLogin()
 Index.sendregisterPage()
