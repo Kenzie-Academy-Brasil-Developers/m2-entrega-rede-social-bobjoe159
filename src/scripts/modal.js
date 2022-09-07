@@ -14,7 +14,6 @@ export class Modal {
             nameModal.innerHTML = result.author.username
             jobModal.innerHTML = result.author.work_at
             modalAvatar.src = result.author.image
-            console.log(result)
             modalText.innerHTML = result.description
           }
         })

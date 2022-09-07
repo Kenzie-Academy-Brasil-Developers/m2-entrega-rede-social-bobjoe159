@@ -96,7 +96,8 @@ export class Requests {
         return resp.data
       })
       .catch(err => {
-        Toast.create(err, 'red')
+        Toast.create('Você já deu like nesse post', 'red')
+        //Toast.create(err, 'red')
       })
     return likePost
   }
