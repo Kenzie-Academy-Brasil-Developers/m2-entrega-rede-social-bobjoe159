@@ -5,7 +5,7 @@ class Index {
     const token = localStorage.getItem('@redeSocial:token')
 
     if (token) {
-      window.location.replace('/src/pages/dashboard.html')
+      window.location.replace('./src/pages/dashboard.html')
     }
   }
 
@@ -27,7 +27,7 @@ class Index {
     const buttonRegister = document.querySelector('.buttonRegister')
 
     buttonRegister.addEventListener('click', () => {
-      window.location.assign('/src/pages/register.html')
+      window.location.assign('./src/pages/register.html')
     })
   }
 }

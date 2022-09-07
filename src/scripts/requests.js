@@ -13,7 +13,7 @@ export class Requests {
         Toast.create('Login realizado com sucesso!', 'green')
 
         setTimeout(() => {
-          window.location.replace('src/pages/dashboard.html')
+          window.location.replace('./src/pages/dashboard.html')
         }, 2000)
       })
       .catch(err => {
