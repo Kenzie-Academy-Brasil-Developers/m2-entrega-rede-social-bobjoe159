@@ -8,7 +8,7 @@ class Register {
       window.location.replace('/index.html')
     })
     backButton.addEventListener('click', () => {
-      window.location.replace('/index.html')
+      window.location.replace('../../index.html')
     })
   }
   static handleRegister() {
