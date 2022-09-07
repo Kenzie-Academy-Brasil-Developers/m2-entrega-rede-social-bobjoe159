@@ -5,10 +5,10 @@ class Register {
     const loginPageBtn = document.querySelector('.loginPageBtn')
     const backButton = document.querySelector('.backButton')
     loginPageBtn.addEventListener('click', () => {
-      window.location.replace('/index.html')
+      window.location.replace('./index.html')
     })
     backButton.addEventListener('click', () => {
-      window.location.replace('/index.html')
+      window.location.replace('./index.html')
     })
   }
   static handleRegister() {
