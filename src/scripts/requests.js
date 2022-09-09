@@ -82,8 +82,9 @@ export class Requests {
 
   static async getAllPosts() {
     const getAllPosts = await instance
-      .get('/posts/')
+      .get('/posts/?limit=10&offset=1040')
       .then(resp => {
+        console.log(resp)
         return resp.data
       })
       .catch(err => {

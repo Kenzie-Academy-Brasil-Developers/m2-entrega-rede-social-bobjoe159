@@ -29,7 +29,7 @@ class Dashboard {
     userFollowers.innerHTML = `${followers.length} seguidores`
   }
 
-  static createPost() {
+  static async createPost() {
     const postTitle = document.querySelector('.postTitle')
     const postDescription = document.querySelector('.postDescription')
     const postButton = document.querySelector('.postButton')
@@ -43,13 +43,14 @@ class Dashboard {
       postTitle.value = ''
       postDescription.value = ''
       await Requests.post(data)
-      Requests.renderPosts()
     })
+    Dashboard.renderPosts()
   }
 
   static async renderPosts() {
     const postsList = await Requests.getAllPosts()
-    postsList.results.forEach(user => {
+    const arrReverse = postsList.results
+    arrReverse.reverse().forEach(user => {
       const li = document.createElement('li')
       li.classList.add('dashboardPost')
       postsContentList.append(li)
